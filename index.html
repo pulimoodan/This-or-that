@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This or that</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="prepare section">
+      <button class="secondary" onclick="addImages()">Add images</button>
+      <input
+        style="display: none"
+        type="file"
+        name="images"
+        id="images"
+        accept="image/*"
+        multiple="true"
+        onchange="onImageUpload(this)"
+      />
+      <div class="images"></div>
+      <p>Add minimum of 3 images</p>
+      <button class="start" onclick="startPoll()" disabled>Start</button>
+    </div>
+
+    <div class="poll section">
+      <h1>Choose one</h1>
+      <p>Select one which is relatively the best.</p>
+      <div class="options">
+        <div class="option" onclick="chooseOption(this)"></div>
+        <div class="option" onclick="chooseOption(this)"></div>
+      </div>
+      <button class="confirm" onclick="confirmSelection()" disabled>
+        Confirm
+      </button>
+    </div>
+
+    <div class="result section">
+      <h1>Result</h1>
+      <p>Here is the best one out your options.</p>
+      <div class="winner"></div>
+      <div class="row">
+        <button class="start-over" onclick="startPoll()">Start over</button>
+        <button class="new-poll secondary" onclick="prepareNewPoll()">
+          New poll
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
